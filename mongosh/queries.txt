@@ -1,0 +1,94 @@
+------To start mongodb shell
+sudo service mongod restart
+
+
+-----show all database
+show dbs
+
+
+---to use any database
+use <db Name>
+
+-----to delete database
+use <db Name>
+db.dropDatabase()
+
+
+----insert one entry
+db.users.insertOne({"name":"Ashutosh"})
+
+----insert many entry
+db.users.insertMany([{"name":"Ashutosh"},{"name":"Naik"}])
+
+
+--show all entries 
+db.users.find()
+
+--sort based on key
+users> db.users.find().sort({"name":1})
+
+--limit entries
+users> db.users.find().sort({"name":1}).limit(2)
+
+--skip entries
+users> db.users.find().sort({"name":1}).skip(1).limit(2)
+
+
+---find by key
+db.users.find({"username":"Delphine"})
+
+---find by key and only get selected database
+will only get name
+db.users.find({"username":"Delphine"},{"name":1})
+
+
+------find by key and only get selected database
+will get all data except name
+db.users.find({"username":"Delphine"},{"name":0})
+
+--find by key with complex query 
+db.users.find({"username":{$eq:"Kamren"}})
+
+db.users.find({"username":{$ne:"Kamren"}})
+
+db.users.find({"age":{$gt:18}})
+
+db.users.find({"age":{$gte:18}})
+
+db.users.find({"age":{$lte:18}})
+
+db.users.find({"age":{$lt:18}})
+
+db.users.find({"username":{$in:["Kamren","Delphine"]}})
+
+db.users.find({"username":{$nin:["Kamren","Delphine"]}})
+
+db.users.find({"address.street":"Home"})
+
+db.users.countDocuments({"username":"Delphine"})
+
+
+-------update by key with complex query 
+
+db.users.updateOne({age:26},{$set:{age:27}})
+
+
+-----delete user 
+db.users.deleteOne({age:18})
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+

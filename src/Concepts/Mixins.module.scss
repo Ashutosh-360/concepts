@@ -1,0 +1,17 @@
+
+@mixin setColor($color) {
+    color: $color;;
+    border: 1px solid $color;
+}
+
+.text {
+    @include setColor(#845455);
+  font-size: 40px;
+
+}
+
+.hello {
+    @include setColor(#3f8924);
+
+  font-size: 90px;
+}

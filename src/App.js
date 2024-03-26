@@ -1,14 +1,16 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
 import LazyLoading from "./Concepts/LazyLoading";
+import ReactWidow from "./Concepts/ReactWindow";
 // const LazyLoading = lazy(() => import("./Concepts/LazyLoading"));
 
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={<div>Loading</div>}>
+      {/* <Suspense fallback={<div>Loading</div>}>
         <LazyLoading />
-      </Suspense>
+      </Suspense> */}
+      <ReactWidow/>
     </div>
   );
 }
