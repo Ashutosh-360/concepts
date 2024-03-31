@@ -1,0 +1,17 @@
+Indexes support efficient execution of queries in MongoDB. Without indexes,
+ MongoDB must scan every document in a collection to return query results. If an appropriate index exists for a query, 
+ MongoDB uses the index to limit the number of documents it must scan.
+
+Although indexes improve query performance, adding an index has negative performance impact for write operations. 
+For collections with a high write-to-read ratio, indexes are expensive because each insert must also update any indexes.
+
+Specify an Index Name
+When you create an index, you can give the index a custom name.
+Giving your index a name helps distinguish different indexes on your collection. 
+
+Before you specify an index name, consider the following:
+Index names must be unique. Creating an index with the name of an existing index returns an error.
+You can't rename an existing index. Instead, you must drop and recreate the index with a new name.
+
+Default Index Names
+If you don't specify a name during index creation, the system generates the name by concatenating each index key field and value with underscores.
