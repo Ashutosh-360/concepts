@@ -19,6 +19,11 @@ Node.js uses a single threaded program and the same program can provide service 
 
 No Buffering − Node.js applications never buffer any data. These applications simply output the data in chunks.
 
+const http = require('http');
+The APIs in Node.js are asynchronous which means that they do not cause blockers. This happens due to the Node.js server not waiting for the return of data once an API has been called. It moves on to the next API. Instead, there is a notification mechanism that gets the response from the prior API call. Thus, we can also say that Node.js is event-driven.
+Node.js is powered by the Google Chrome V8 JavaScript Engine. This makes code execution in the Node.js library super fast.
+Node.js is based on a single-thread model with event looping. The event mechanism in the Node.js library makes it highly scalable because it prevents blockers on the server as compared to other servers that can only handle limited requests. In Node.js, the single thread program can service copious requests compared to something like Apache HTTP Server.
+Because of the event mechanism in Node.js, there is no buffering. Instead, the data output occurs in chunks.
 License − Node.js is released under the MIT license.
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -30,3 +35,4 @@ JSON APIs based Applications
 Single Page Applications
 
 ---------------------------------------------------------------------------------------------------------------------------
+
